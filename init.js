@@ -8,8 +8,11 @@ let width = 800;
 
 let height = 600;
 
+let colour = "rgb(169,169,169)"
+
 canvas.width = width;
 canvas.height = height;
+canvas.colour = colour
 
 console.log("init.js has been called")
 let myScale = 0;

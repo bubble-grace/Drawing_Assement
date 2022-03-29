@@ -81,9 +81,11 @@
 					Your browser does not support the video tag.
 				</video>
 
- <h3>Reflect</h3>
+ <h3>Reflection</h3>
 				<p>In the video above you can see the code responses correctly to the expected input, creating a rectangle of the correct proportions. Including not creating a shape when the mouse is out of the canvas.  There is one main issue with this sprint and this is the circle because it responds to the width. When a rectangle is very long and not tall, the circle will have a larger radius than the height of the circle, therefore the circle is outside the rectangle. To fix this I will add an if statement if radius > height +5 make the radius the height divided by 10.
 				</p>
+
+				<p>Another main issue is that if you go out of bounds it does not draw the rectangle to the bounds, only making no rectangle appear. To fix this in the next version I will add a cut piece of code to allow the rectangle to form but only cutting off the part that is out of bounds. </p>
 <hr>
 <h1>Sprint Two</h1>
 
