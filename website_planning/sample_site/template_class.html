@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Please put a title in</title>
+		<title>Grace Website</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="Description" lang="en" content="ADD SITE DESCRIPTION">
 		<meta name="author" content="ADD AUTHOR INFORMATION">
@@ -29,13 +29,13 @@
 	<body>
 		<div class="container">
 			<div class="header">
-				<h1 class="header-heading">Sitename</h1>
+				<h1 class="header-heading">Grace Planning Website</h1>
 			</div>
 			<div class="nav-bar">
 				<ul class="nav">
-					<li><a href="#">Nav item 1</a></li>
-					<li><a href="#">Nav item 2</a></li>
-					<li><a href="#">Nav item 3</a></li>
+					<li><a href="#">Sprint 1</a></li>
+					<li><a href="#">Sprint 2</a></li>
+					<li><a href="#">Sprint 3</a></li>
 				</ul>
 			</div>
 			<div class="content">
@@ -45,15 +45,45 @@
 			
                     
 					<h1>Brief</h1>
-					<hr>
+
+				<p>The brief is to make a web based drawing application, allowing the user to make shapes and manage colours.
+				The purpose is to entertain young students with an interactive activity to teach them about geometric shapes. To start this project I made a plan
+				I knew I wanted to make shapes and have colour management, so I made a brainstorm of what shapes could be made and also how colour management could be achieved
+				by different methods. Following this I also made a project backlog with 7 basic ideas I wanted to achieve with each sprint, this is seen below.</p>
+				<img class="img-responsive" src="assets/img/backlog_kanban.PNG" alt="">
+				<img class="img-responsive" src="assets/img/project_plan.JPG" alt="">
+
+
+				<hr>
+
 
     <!-- Heading levels -->
     <h1>Sprint One</h1>
-<p>Plan</p>
-<p>Boards</p>
-<p>Link to the Canvas Page</p>
-<p>Test</p>
- <p>Reflect</p>
+<h3>Plan</h3>
+				<p>The aim for sprint one is to make a Canvas with an interactive rectangles that can be sized.
+				To achieve this I looked into using Mouse up, down and move functions so the canvas would know where
+				the mouse was at all times. The goal was when the mouse was released a rectangle would form based on
+				were the mouse was in relation to the starting drag point. Guidelines would be available to show
+				the user where there intended rectangle would be if they stopped dragging the mouse there </p>
+
+				<div class="col">
+				<img class="img-responsive" src="assets/img/init_pseudo.JPG" alt="">
+				</div>
+				<div class="col">
+				<img class="img-responsive" src="assets/img/object_pseudo.JPG" alt="">
+				</div>
+<h3>Boards</h3>
+				<img class="img-responsive" src="assets/img/sprint1_kanban.PNG" alt="">
+<h3>Link to the Canvas Page</h3>
+<h3>Test</h3>
+				<video class="center" controls>
+					<source src="assets/vids/Sprint1_testing.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+ <h3>Reflect</h3>
+				<p>In the video above you can see the code responses correctly to the expected input, creating a rectangle of the correct proportions. Including not creating a shape when the mouse is out of the canvas.  There is one main issue with this sprint and this is the circle because it responds to the width. When a rectangle is very long and not tall, the circle will have a larger radius than the height of the circle, therefore the circle is outside the rectangle. To fix this I will add an if statement if radius > height +5 make the radius the height divided by 10.
+				</p>
 <hr>
 <h1>Sprint Two</h1>
 
