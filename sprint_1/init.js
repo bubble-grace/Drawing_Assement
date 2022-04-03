@@ -121,6 +121,8 @@ function drawCircle(x,y,r, fill){
     ctx.stroke();
 }
 
+
+
 class Rectangle{
     constructor(x,y,w,h,colour) {
         this.w = w;
