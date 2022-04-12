@@ -64,9 +64,9 @@ class Manager extends InteractiveObject {
         this.drawRect(this.xStart, this.yStart, this.w, this.h)
             this.drawLine(this.xStart,this.yStart ,this.xStart+this.w, this.yStart+this.h, "rgb(0,0,0)")
             this.drawLine(this.xStart,this.yStart+this.h ,this.xStart+this.w, this.yStart, "rgb(0,0,0)")
-            let radius = this.w/30
+            let radius = Math.abs(this.w)/30
             if (radius += 5 > this.h){
-                radius = (this.h/10)
+                radius = Math.abs(this.h)/10
             }
             this.drawCircle(this.xStart + this.w/2,this.yStart+this.h/2, Math.abs(radius), "rgb(0,0,0)")
 
