@@ -169,11 +169,13 @@ class Manager extends InteractiveObject {
                     radius = Math.abs(this.h) / 10
                 }
                 this.drawCircle(this.xStart + this.w / 2, this.yStart + this.h / 2, Math.abs(radius), "rgb(0,0,0)")
+
             }
         // circle
         else if (name === "Ellipse") {
                 this.drawRect(this.xStart, this.yStart, this.w, this.h)
                 this.basicEllipse(this.xStart + this.w / 2, this.yStart + this.h / 2, Math.abs(this.w / 2), Math.abs(this.h / 2), "rgb(0,0,0)")
+
             } else {
                 console.log()
             }
