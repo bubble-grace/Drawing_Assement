@@ -1,0 +1,50 @@
+<body>
+
+<canvas id='myCanvas'></canvas>
+
+<script type="text/javascript" src="init.js"> </script>
+<script type="text/javascript" src="buttons.js"> </script>
+
+
+<script>
+    let G = new Grid(width, height, 25, "rgb(169,169,169)", 0.3);
+    let E = new InteractiveButton(50, 50, 100, 50, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Ellipse', "rgb(0,0,0)");
+    let R = new InteractiveButton(50, 100, 100, 50, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Rectangle', "rgb(0,0,0)");
+    let S = new InteractiveButton(50, 150, 100, 50, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Star', "rgb(0,0,0)");
+    let H = new InteractiveButton(50, 200, 100, 50, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Heart', "rgb(0,0,0)");
+
+    let white = new InteractiveButton(50, 250, 33, 50, colArray[0], colArray[0], "rgb(255,255,255)",colArray[2], 'white', "rgb(0,0,0)");
+    let grey = new InteractiveButton(83, 250, 33, 50, colArray[1], colArray[1], "rgb(169,169,169)",colArray[2], 'grey', "rgb(0,0,0)");
+    let black = new InteractiveButton(116, 250, 33, 50, colArray[2], colArray[2], "rgb(20,20,20)",colArray[2], 'black', "rgb(255,255,255)");
+    let red = new InteractiveButton(50, 300, 33, 50, colArray[3], colArray[3],"rgb(255,0,0)",colArray[2], 'red', "rgb(0,0,0)");
+    let orange = new InteractiveButton(83, 300, 33, 50, colArray[4], colArray[4], "rgb(243,103,10)",colArray[2], 'orange', "rgb(0,0,0)");
+    let yellow = new InteractiveButton(116, 300, 33, 50, colArray[5], colArray[5], "rgb(240,174,41)",colArray[2], 'yellow', "rgb(0,0,0)");
+    let green = new InteractiveButton(50, 350, 33, 50, colArray[6], colArray[6], "rgb(47,220,47)",colArray[2], 'green', "rgb(0,0,0)");
+    let blue = new InteractiveButton(83, 350, 33, 50, colArray[7], colArray[7], "rgb(71,71,265)",colArray[2], 'blue', "rgb(0,0,0)");
+    let purple = new InteractiveButton(116, 350, 33, 50, colArray[8], colArray[8], "rgb(168,0,168)",colArray[2], 'purple', "rgb(0,0,0)");
+
+
+    let M = new Manager();
+
+    let colourSet = [white, grey, black, red, orange, yellow, green, blue, purple]
+
+    let buttonSet = [E,R,S,H]
+
+    function animate(){
+        ctx.clearRect(0,0, width, height);
+        G.update();
+        M.update();
+        for (let i=0; i<colourSet.length; i++){
+            colourSet[i].update();
+        }
+        for (let i=0; i<buttonSet.length; i++){
+            buttonSet[i].update();
+        }
+        window.requestAnimationFrame(animate)
+    }
+
+    animate();
+</script>
+
+</body>
+    </html>
