@@ -35,8 +35,6 @@ class InteractiveObject{
     }
 
 }
-
-
 class InteractiveButton extends InteractiveObject {
     constructor(x, y, w, h, fill, over, selected, stroke,text, textColour) {
         super();
@@ -97,6 +95,60 @@ class InteractiveButton extends InteractiveObject {
 }
 InteractiveButton.selected = "";
 
+class Swatch extends InteractiveObject {
+    constructor(x, y, w, h, fill, over, selected, stroke) {
+        super();
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+        this.fill = fill;
+        this.over = over;
+        this.selected = selected;
+        this.stroke = stroke;
+        this.inBounds = false;
+    }
+    update(){
+        this.inBounds = this.getBoundary(this.x,this.y, this.w, this.h,
+            this.xMouse, this.yMouse)
+        let stroke = this.stroke;
+        if(Swatch.selected === this){
+            stroke = this.selected
+            Swatch.colour = this.fill
+        }else if (this.inBounds){
+            stroke =this.over
+        }
+        this.draw(this.x,this.y,this.w,this.h,this.fill, stroke,
+            this.textColour)
+    }
+    mClick(){
+        if(this.inBounds){
+           Swatch.selected = this;
+        }
+    }
+    getBoundary(x,y,w,h,x_m,y_m){
+        if(x_m>x && x_m < x+ w && y_m > y && y_m < y +h){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+    draw(x,y,w,h,c,s){
+        ctx.beginPath();
+        ctx.rect(x,y,w,h);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = s;
+        ctx.fillStyle = c;
+        ctx.fill();
+        ctx.stroke();
+    }
+}
+Swatch.selected = "";
+Swatch.colour = colArray[0]
+
 class Manager extends InteractiveObject {
     constructor() {
         super()
@@ -115,60 +167,40 @@ class Manager extends InteractiveObject {
         }
     }
 
+
     mUp(e) {
         super.mUp(e);
         let name = InteractiveButton.selected.text;
         console.log(name)
         if (this.readytodraw) {
             if (name === "Ellipse") {
-                let temp = new ellipse(this.xStart + this.w / 2, this.yStart + this.h / 2, Math.abs(this.w / 2), Math.abs(this.h / 2), this.fill);
+                let temp = new ellipse(this.xStart + this.w / 2, this.yStart + this.h / 2, Math.abs(this.w / 2), Math.abs(this.h / 2), Swatch.colour);
                 this.objectSet.push(temp);
-                this.update()
 
             } else if (name === "Rectangle") {
-                let temp = new Rectangle(this.xStart, this.yStart, this.w, this.h, this.fill);
+                let temp = new Rectangle(this.xStart, this.yStart, this.w, this.h, Swatch.colour);
                 this.objectSet.push(temp);
-                this.update()
+
             } else if (name === "Star") {
-                let temp = new Star(this.xStart, this.yStart, this.w, this.h, this.fill);
+                let temp = new Star(this.xStart, this.yStart, this.w, this.h, Swatch.colour);
                 this.objectSet.push(temp);
-                this.update()
+
             } else if (name === "Heart") {
-                let temp = new Heart(this.xStart, this.yStart, this.w, this.h, this.fill);
+                let temp = new Heart(this.xStart, this.yStart, this.w, this.h, Swatch.colour);
                 this.objectSet.push(temp);
-                this.update()
-            }else if (name === "white") {
-                this.fill = colArray[0]
-            } else if (name === "grey") {
-                this.fill = colArray[1]
-            } else if (name === "black") {
-                this.fill = colArray[2]
-            } else if (name === "red") {
-                this.fill = colArray[3]
-            } else if (name === "orange") {
-                this.fill = colArray[4]
-            } else if (name === "yellow") {
-                this.fill = colArray[5]
-            } else if (name === "green") {
-                this.fill = colArray[6]
-            } else if (name === "blue") {
-                this.fill = colArray[7]
-            } else if (name === "purple") {
-                this.fill = colArray[8]
-            }
-            else{
-                this.readytodraw = false
             }
 
+            this.readytodraw = false;
         }
-        this.readytodraw = false
     }
 
     update(){
-        basicRect(rect_startx,rect_starty, rect_width, rect_height,"rgb(200,200,200)")
+        ctx.save()
+        basicRect(rect_start_x,rect_start_y, rect_width, rect_height,"rgb(200,200,200)")
+        ctx.clip()
         this.w = this.xMouse - this.xStart;
         this.h = this.yMouse - this.yStart;
-        this.inBounds = this.getBoundary(this.xMouse,this.yMouse,rect_startx,rect_starty, rect_width, rect_height)
+        this.inBounds = this.getBoundary(this.xMouse,this.yMouse,rect_start_x,rect_start_y, rect_width, rect_height)
         console.log(this.inBounds)
         for (let i = 0; i < this.objectSet.length; i++ && this.inBounds) {
             this.objectSet[i].update()
@@ -177,8 +209,8 @@ class Manager extends InteractiveObject {
             console.log("mouse is down")
             this.draw();
         }
-        else{
-        }
+        ctx.restore()
+
     }
     getBoundary(mouseX,mouseY,x, y,w,h){
         if( (mouseX > x) && (mouseX < x+w) && (mouseY > y) && (mouseY < y+h)) {
@@ -199,23 +231,28 @@ class Manager extends InteractiveObject {
                 if (radius += 5 > this.h) {
                     radius = Math.abs(this.h) / 10
                 }
-                this.drawCircle(this.xStart + this.w / 2, this.yStart + this.h / 2, Math.abs(radius), "rgb(0,0,0)")
+                this.drawCircle(this.xStart + this.w / 2, this.yStart + this.h / 2, Math.abs(radius), "rgb(0,0,0)");
 
-            }
+
+        }
         // circle
         else if (name === "Ellipse") {
                 this.drawRect(this.xStart, this.yStart, this.w, this.h)
-                this.basicEllipse(this.xStart + this.w / 2, this.yStart + this.h / 2, Math.abs(this.w / 2), Math.abs(this.h / 2), "rgb(0,0,0)")
+                this.basicEllipse(this.xStart + this.w / 2, this.yStart + this.h / 2, Math.abs(this.w / 2), Math.abs(this.h / 2), "rgb(0,0,0)");
 
-            }
+
+
+        }
         else if (name === "Star") {
             this.drawRect(this.xStart, this.yStart, this.w, this.h)
-            this.basicStar(this.xStart , this.yStart , this.w, this.h,"rgb(0,0,0)")
+            this.basicStar(this.xStart , this.yStart , this.w, this.h,"rgb(0,0,0)");
+
 
         }
         else if (name === "Heart") {
             this.drawRect(this.xStart, this.yStart, this.w, this.h)
-            this.basicHeart(this.xStart , this.yStart , this.w, this.h,"rgb(0,0,0)")
+            this.basicHeart(this.xStart , this.yStart , this.w, this.h,"rgb(0,0,0)");
+
         }
         else {
                 console.log()
@@ -224,12 +261,10 @@ class Manager extends InteractiveObject {
     }
 
 }
-Manager.prototype.basicRect = basicRect
 Manager.prototype.drawRect = drawRect
 Manager.prototype.drawLine = drawLine
 Manager.prototype.drawCircle = drawCircle
 Manager.prototype.basicEllipse = basicEllipse
 Manager.prototype.basicStar = basicStar
-Manager.prototype.fillStar = fillStar
 Manager.prototype.basicHeart = basicHeart
-Manager.prototype.fillHeart = fillHeart
+

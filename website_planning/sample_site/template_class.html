@@ -192,13 +192,14 @@
 				<h3>Plan</h3>
 
 				<img class="img-responsive" src="assets/img/sprint4_kanban.PNG" alt="">
+				<img class="img-responsive" src="assets/img/pseudo_4.jpg" alt="">
 				<p>
 					The aim of this sprint is to fix all the errors from the previous sprints to make a function code. To do this I will add a boundary function to test the parameters of the rectangle canvas. I would also like if the shape is partly in the canvas only that area is shown.
 				</p>
 
 				<h3>Testing</h3>
 				<video class="center" controls>
-					<source src="assets/vids/sprint4_test.mp4.mp4" type="video/mp4">
+					<source src="assets/vids/sprint4_test.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
 
@@ -230,11 +231,58 @@
 
 				<h3>Plan</h3>
 				<img class="img-responsive" src="assets/img/sprint6_kanban.PNG" alt="">
+				<img class="img-responsive" src="assets/img/pseudo_6.jpg" alt="">
 
 				<p>The plan for this sprint is to introduce colour management, it  makes the most amount of sense to try this with only 9 colours to start with. The colours I have chosen are, white, grey, black,red, orange, yellow, green, blue and purple. I chose these colours because they are familiar to most and cover a large range with ease. I will make these into a grid make from the 9 buttons, the aim is once the colour is chosen it will continue to use that colour until told otherwise.   </p>
 
+				<h3>Reflection </h3>
+				<video class="center" controls>
+					<source src="assets/vids/sprint6.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<p>This code works as expected however you can not draw a shape without a colour being selected, therefore I would like to set a colour at the start so the user can make a shape. There is an issue when the user selects both a colour and a shape the button will only allow one to look selected at once. </p>
 <hr>
-<h1> Relevant Implications Summary</h1>
+
+
+				<h1>Sprint Seven</h1>
+
+				<h3>Plan</h3>
+				<img class="img-responsive" src="assets/img/sprint7_kanban.PNG" alt="">
+
+				<p>For this sprint I wanted to test two options for clearing objects outside my drawing canvas area. The first idea was to get the boundary and where the shape finished  and use these values to clear a rectangle. The other option was to save the shape then clip it to make that the only allow the canvas area when the mouse is down. I also wanted to make my colours a different place to my buttons, to do this I made an another class called Swatch, this is very similar to the previous version however it causes less issues when both a colour and shape are selected
+				</p>
+<div class = "col">
+				<img class="img-responsive" src="assets/img/pseudo_7a.JPG" alt="">
+			</div>
+			<div class = "col">
+				<img class="img-responsive" src="assets/img/pseudo_7b.JPG" alt="">
+		</div>
+
+				<h3>Testing</h3>
+
+				<div class="col">
+					<h4>Clear function</h4>
+					<video class="center" controls>
+						<source src="assets/vids/clear_test.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+				<div class="col">
+					<h4>Clip function</h4>
+					<video class="center" controls>
+						<source src="assets/vids/clip_test.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+
+
+				<p>I believe that the clip function is best for this problem as it does not require values from the mouse to work, as well as clipping the dragged shape. The finding boundaries code works however the clear function also clears the grid in the background, which means it would need to be updated regularly.
+				</p>
+				<h3>Reflection </h3>
+				<p>I am very happy with this sprint and the testing done to find the best solution to allow the user to only draw shapes inside the given canvas area. The colours are also easier to use there appear to be no issues at the moment and are working for all expected and unexpected inputs . The aim for the next sprint is to have an undo and redo buttons to allow the user more freedom.</p>
+
+
+				<h1> Relevant Implications Summary</h1>
  <hr>
  <hr>
 <!-- Paragraphs -->
