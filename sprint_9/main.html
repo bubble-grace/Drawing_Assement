@@ -1,0 +1,81 @@
+<body>
+
+<canvas id='myCanvas'></canvas>
+
+<script type="text/javascript" src="init.js"> </script>
+<script type="text/javascript" src="buttons.js"> </script>
+
+
+<script>
+    let G = new Grid(width, height, 25, "rgb(169,169,169)", 0.3);
+
+    let x = 25
+    let y = 50
+    let w = 75
+    let h = 25
+    let E = new InteractiveButton(x, y, w, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Ellipse', "rgb(0,0,0)");
+    let R = new InteractiveButton(x, y+1*h, w, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Rectangle', "rgb(0,0,0)");
+    let S = new InteractiveButton(x, y+2*h, w, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Star', "rgb(0,0,0)");
+    let H = new InteractiveButton(x, y+3*h, w, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Heart', "rgb(0,0,0)");
+    let F = new InteractiveButton(x, y+5*h, w, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Smiley Face', "rgb(0,0,0)");
+    let L = new InteractiveButton(x, y+6*h, w, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Line', "rgb(0,0,0)");
+    let L1 = new SizeButton(x, y+7*h, w/3, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'S', "rgb(0,0,0)", 2);
+    let L2 = new SizeButton(x+w/3, y+7*h, w/3, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'M', "rgb(0,0,0)", 5);
+    let L3 = new SizeButton(x+2*w/3, y+7*h, w/3, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'L', "rgb(0,0,0)", 10);
+
+
+
+    let U = new InteractiveButton(x, y+9*h, w, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Undo', "rgb(0,0,0)");
+    let Re = new InteractiveButton(x, y+10*h, w, h, "rgb(169,169,169)", colArray[0], "rgb(255,255,255)",colArray[2], 'Clear', "rgb(0,0,0)");
+
+
+    x=25
+    y=350
+    w=12.5
+    h=12.5
+    let white = new Swatch(x, y, w, h, colArray[0], colArray[0],  colArray[0],colArray[2]);
+    let grey = new Swatch(x+2*w, y, w, h, colArray[1], colArray[1],  colArray[0],colArray[2]);
+    let black = new Swatch(x+4*w, y, w, h, colArray[2], colArray[2],  colArray[0],colArray[2], );
+    let red = new Swatch(x, y+2*h, w, h, colArray[3], colArray[3], colArray[0],colArray[2]);
+    let orange = new Swatch(x+2*w, y+2*h, w, h, colArray[4], colArray[4], colArray[0],colArray[2]);
+    let yellow = new Swatch(x+4*w, y+2*h, w, h, colArray[5], colArray[5], colArray[0],colArray[2]);
+    let green = new Swatch(x, y+4*h, w, h, colArray[6], colArray[6],  colArray[0],colArray[2]);
+    let blue = new Swatch(x+2*w, y+4*h, w, h, colArray[7], colArray[7],  colArray[0],colArray[2]);
+    let purple = new Swatch(x+4*w, y+4*h, w, h, colArray[8], colArray[8],  colArray[0],colArray[2]);
+
+
+    let M = new Manager();
+
+    let colourSet = [white, grey, black, red, orange, yellow, green, blue, purple]
+
+    let buttonSet = [E,R,S,H,L,F,U, Re]
+    let widthSet = [L1, L2, L3]
+
+
+    function animate(){
+        ctx.clearRect(0,0, width, height);
+        G.update();
+        M.update();
+        for (let i=0; i<widthSet.length; i++){
+            widthSet[i].update();
+        }
+        for (let i=0; i<colourSet.length; i++){
+            colourSet[i].update();
+        }
+        for (let i=0; i<buttonSet.length; i++){
+            buttonSet[i].update();
+        }
+
+        window.requestAnimationFrame(animate)
+    }
+
+    animate();
+</script>
+
+</body>
+    </html>
+
+
+
+
+
