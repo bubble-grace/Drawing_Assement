@@ -33,9 +33,17 @@
 			</div>
 			<div class="nav-bar">
 				<ul class="nav">
-					<li><a href="#">Sprint 1</a></li>
-					<li><a href="#">Sprint 2</a></li>
-					<li><a href="#">Sprint 3</a></li>
+					<li><a href="#1">Sprint 1</a></li>
+					<li><a href="#2">Sprint 2</a></li>
+					<li><a href="#3">Sprint 3</a></li>
+					<li><a href="#4">Sprint 4</a></li>
+					<li><a href="#5">Sprint 5</a></li>
+					<li><a href="#6">Sprint 6</a></li>
+					<li><a href="#7">Sprint 7</a></li>
+					<li><a href="#8">Sprint 8</a></li>
+					<li><a href="#9">Sprint 9</a></li>
+					<li><a href="#10">Sprint 10</a></li>
+					<li><a href="#R">Relevant Implication</a></li>
 				</ul>
 			</div>
 			<div class="content">
@@ -58,6 +66,7 @@
 
 
     <!-- Heading levels -->
+				<div id="1">
     <h1>Sprint One</h1>
 <h3>Plan</h3>
 				<p>The aim for sprint one is to make a Canvas with an interactive rectangles that can be sized.
@@ -86,7 +95,8 @@
 				</p>
 
 				<p>Another main issue is that if you go out of bounds it does not draw the rectangle to the bounds, only making no rectangle appear. To fix this in the following sprints I will add a cut piece of code to allow the rectangle to form but only cutting off the part that is out of bounds. </p>
-<hr>
+<hr> </div>
+				<div id="2">
 <h1>Sprint Two</h1>
 
 				<h3>Testing a Circle and an Ellipse</h3>
@@ -152,6 +162,8 @@
 
 
 <hr>
+				</div>
+				<div id="3">
 <h1>Sprint Three</h1>
 
 				<h3>Plan</h3>
@@ -186,7 +198,8 @@
 				<h3>Reflection</h3>
 				<p>I have an error when I try to draw a shape from the buttons there seems to be a delay in the outlines for the shapes. When the first shape is drawn it has no outline and then after I change shapes the original outline remains for the first shape of that type. Another error is the boundary as there currently are none so a shape can be drawn anywhere.These will be fixed in the next sprint, as I am happy with the buttons and canvas function
 				</p>
-
+				</div>
+				<div id="4">
 				<h1>Sprint Four</h1>
 
 				<h3>Plan</h3>
@@ -205,7 +218,8 @@
 
 				<h3>Reflection</h3>
 				<p>The main aim of the sprint was accomplished with the user only being able to draw shapes with the defined canvas area. However, there is still one main issue if the mouse starts inside the canvas area but ends up outside the canvas area the shape is still drawn. this is because that is not defined. The aim for my next sprint is to have more complex shapes to enhance the options available to the user.  </p>
-
+				</div>
+				<div id="5">
 				<h1>Sprint Five</h1>
 
 				<h3>Plan</h3>
@@ -226,7 +240,8 @@
 				</video>
 				<h3>Reflection </h3>
 				<P> Overall this sprint went well I have successfully added two buttons, and I am happy with the visuals for both the star and the heart. However, there is one main issue this being the flipping of the heart when the starting point is lower than the finishing point of the mouse.  The heart appears upside down, this unfortunately results in a strange shape, however currently I am unsure of a solution. For my next sprint I will focus on colour management in a colour grid to allow the user to select a colour and a shape to draw.   </P>
-
+				</div>
+				<div id="6">
 				<h1>Sprint Six</h1>
 
 				<h3>Plan</h3>
@@ -242,7 +257,8 @@
 				</video>
 				<p>This code works as expected however you can not draw a shape without a colour being selected, therefore I would like to set a colour at the start so the user can make a shape. There is an issue when the user selects both a colour and a shape the button will only allow one to look selected at once. </p>
 <hr>
-
+				</div>
+				<div id="7">
 
 				<h1>Sprint Seven</h1>
 
@@ -280,7 +296,8 @@
 				</p>
 				<h3>Reflection </h3>
 				<p>I am very happy with this sprint and the testing done to find the best solution to allow the user to only draw shapes inside the given canvas area. The colours are also easier to use there appear to be no issues at the moment and are working for all expected and unexpected inputs . The aim for the next sprint is to have an undo and redo buttons to allow the user more freedom.</p>
-
+				</div>
+				<div id="8">
 				<h1>Sprint Eight</h1>
 				<h3>Plan</h3>
 
@@ -300,6 +317,8 @@
 
 					I am happy with my undo and clear buttons as they give users more options, in order to make the user think before accidentally undoing their whole projet, the undo button gets deselected after being used. This means the user can undo more than once however they have to make a conscious decision to do so.
 				</p>
+				</div>
+				<div id="9">
 				<h1>Sprint Nine</h1>
 				<h3>Plan</h3>
 				<img class="img-responsive" src="assets/img/plan_9.JPG" alt="">
@@ -319,10 +338,43 @@
 				<h3>Reflection</h3>
 
 <p>The buttons work, and I am pleased with the outcome as they resemble drawings I would make with pen and paper. The width function gives the user more options for how they want to personalise and use the application. For the next sprint I would like to change the amount of points the star could have to give the user further options. </p>
+				</div>
+				<div id="10">
+				<h1>Sprint Ten</h1>
+				<h3>Plan</h3>
+				<img class="img-responsive" src="assets/img/sprint10_kanban.PNG" alt="">
 
+				<p>The plan for this sprint is to give the user more options when drawing a star. I wanted the user to have four options for the number of points they wanted. When I first looked into making stars, I was trying to decide between five and six points so I knew that I wanted to include these as options. I also want to include a seven and eight pointed star, because I believe these will be most helpful and are visually appealing. </p>
+				<img class="img-responsive" src="assets/img/pseudo_10.jpg" alt="">
+<p>
+
+</p>
+				<h3>Testing</h3>
+				<video class="center" controls>
+					<source src="assets/vids/sprint10.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+
+
+				<h3>Reflection</h3>
+
+				<p>
+
+					After some adapting I changed part of the function for the star, to allow the points to always be evenly spaced apart. This meant that I needed to get twice the amount of points that would be visible because this is drawn based on the lines. This however was successful and we are now drawing symmetrical stars that work for a variety of points.
+				</p>
+				</div>
+					<div id="R">
 
 				<h1> Relevant Implications Summary</h1>
- <hr>
+				<h3>Usability </h3>
+
+				<p> Usability is how easy the program is to use, this is done by clear informative user feedback to make the experience more enjoyable. </p>
+
+				<p> I believe that my drawing program is user-friendly because there is a hover function over the buttons and the user therefore knows where they are and what their options are. The naming is also mainly self explanatory with the width being defined as S, M, L to indicate small, medium and large. This is the same with the number of points on the star, the numbers start from 5 to indicate to the user that these buttons do not control the rectangle, ellipse or heart. So by process of deduction it must  control the star. Also to help the user if a line width or a star point number is not selected but the object is selected, these values have a default. </p>
+
+
+				<hr>
+					</div>
  <hr>
 <!-- Paragraphs -->
 <h3>Example code insert (don't do too much of this)</h3>
@@ -335,37 +387,7 @@
         }
     }</code>
 </pre>
- 
-            <hr>     
-                
-                <h3>Video Test Example</h3>
 
-
-				<video class="center" controls>
-					<source src="assets/vids/littleTest.mp4" type="video/mp4">
-				  Your browser does not support the video tag.
-				  </video>
-					<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-					<hr>
-
-					<!-- Responsive images -->
-					<h3>Example image placements</h3>
-					<p>For images to be responsive (so that they will rescale to suit the width of the parent, use the <code>.img-responsive</code> class.</p>
-					<img class="img-responsive" src="assets/img/place_holder.png" alt="">
-                <hr>
-                <div class="col-container">
-                <div class="col">
-               <img class="img-responsive" src="assets/img/place_holder_sm.jpg" alt="">
-                <p>Ut wisi enim ad minim veniam, <a href="#">quis nostrud exerci tation ullamcorper</a> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel.</p>
-                </div>
-                 <div class="col">
-                <img class="img-responsive" src="assets/img/place_holder_sm.jpg" alt="">
-                <p>Ut wisi enim ad minim veniam, <a href="#">quis nostrud exerci tation ullamcorper</a> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel.</p>
-                </div>
-                </div>
-                <hr>
-               
-              
 
 					<!-- Lists -->
 					<h3>Unordered list</h3>
