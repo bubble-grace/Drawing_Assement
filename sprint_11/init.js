@@ -6,7 +6,7 @@ let ctx = canvas.getContext('2d');
 
 let width = 800;
 
-let height = 600;
+let height = 400;
 
 let colour = "rgb(169,169,169)"
 
@@ -14,7 +14,7 @@ let colour = "rgb(169,169,169)"
 let rect_start_x = 350;
 let rect_start_y = 50;
 let rect_width = 400;
-let rect_height = 400;
+let rect_height = 300;
 
 // the canvas area (grid area)
 canvas.width = width;
@@ -22,6 +22,10 @@ canvas.height = height;
 canvas.colour = colour
 
 let myScale = 0;
+
+/**
+ * Function set up canvas
+ */
 
 // set up the canvas to be used
 function setupCanvas (canvas){
@@ -55,6 +59,19 @@ let colArray=[
 
 // ----------------------------------------
 
+/**
+ * Class Grid
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ * @param {string} over hover over colour
+ * @param {string} selected button has been clicked colour
+ * @param {string} stroke stroke colour
+ * @param {string} text button text
+ * @param {string} textColour
+*/
 class Grid {
     constructor(w, h, intervalWidth, strokeColour,
                 strokeWidth) {
@@ -88,7 +105,13 @@ class Grid {
 
 }
 //--------------------------------------------------------
-
+/**
+ * Function Draw a Rectangle
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ */
  function drawRect(x,y,w,h){
     ctx.beginPath();
     ctx.rect(x,y,w,h);
@@ -98,6 +121,14 @@ class Grid {
     ctx.stroke();
 }
 
+/**
+ * Function Draw a Rectangle with a fill function
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ */
 function basicRect(x,y,w,h,fill){
     ctx.beginPath();
     ctx.rect(x,y,w,h);
@@ -105,6 +136,15 @@ function basicRect(x,y,w,h,fill){
     ctx.fillStyle = fill;
     ctx.fill()
 }
+/**
+ * Function Draw a Rectangle with a fill function and an outline
+ * this is used for thr background of the drawing area
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ */
 
 function backRect(x,y,w,h,fill){
     ctx.beginPath();
@@ -117,6 +157,14 @@ function backRect(x,y,w,h,fill){
     ctx.strokeStyle = colArray[2];
     ctx.stroke();
 }
+
+/**
+ * Function Draw Circle
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} r radius (width/2)
+ * @param {string} fill fill colour
+ */
 
 // draw circle needed for guidelines for the rectangle
 function drawCircle(x,y,r, fill){
@@ -145,6 +193,16 @@ class Line{
         drawLine(this.x, this.y, this.x + this.w, this.y+this.h, this.fill, this.width)
     }
 }
+
+/**
+ * Function Draw a Line
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} x1 end x point (x + or - width)
+ * @param {number} y1 end x point (y + or - height)
+ * @param {string} fill fill colour
+ * @param {number} width thickness of the line
+ */
 
 // for rectangle guidelines and line function
 function drawLine(x,y,x1,y1, fill, width){
@@ -190,7 +248,14 @@ class Ellipse{
         fillEllipse(this.x, this.y, this.w, this.h, this.fill)
     }
 }
-
+/**
+ * Function Draw an Ellipse
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ */
 function fillEllipse(x,y,w,h,fill){
     ctx.beginPath();
     // starts from the middle make sure the x,y are in the middle
@@ -199,6 +264,15 @@ function fillEllipse(x,y,w,h,fill){
     ctx.fillStyle = fill;
     ctx.fill()
 }
+/**
+ * Function Draw a basic Ellipse
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ * @param {number} size thickness of the outline
+ */
 function basicEllipse(x,y,w,h,fill, size){
     ctx.beginPath();
     // starts from the middle make sure the x,y are in the middle
@@ -228,7 +302,15 @@ class Star{
         }
 }
 
-
+/**
+ * Function Draw a filled Star
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ * @param {number} point number of points in the star
+ */
 function fillStar(x,y,w,h,fill, point = 5){
     // move to the middle
     ctx.moveTo(x+w/2,y-h/2)
@@ -244,6 +326,16 @@ function fillStar(x,y,w,h,fill, point = 5){
     // filling in the shape
     ctx.fill()
 }
+
+/**
+ * Function Draw a outline (basic) Star
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ * @param {number} point number of points in the star
+ */
 function basicStar(x,y,w,h,fill, point = 5){
     // move to the middle
     ctx.moveTo(x+w/2,y-h/2)
@@ -281,6 +373,15 @@ class Heart{
     }
 }
 
+/**
+ * Function Draw filled Heart
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ */
+
 function fillHeart(x,y,w,h,fill){
     ctx.beginPath();
     let topCurveHeight = h * 0.3;
@@ -304,6 +405,15 @@ function fillHeart(x,y,w,h,fill){
     ctx.fillStyle = fill;
     ctx.fill()
 }
+
+/**
+ * Function Draw outline (basic) Heart
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill outline colour
+ */
 function basicHeart(x,y,w,h,fill){
     ctx.beginPath();
     let topCurveHeight = h * 0.3;
@@ -344,6 +454,16 @@ class Smiley_Face{
         draw_Smiley_Face(this.x, this.y, this.w, this.h, this.fill, this.size)
     }
 }
+
+/**
+ * Function Draw filled Smiley Face
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ * @param {number} size thickness of line
+ */
 
 function draw_Smiley_Face(x,y,w,h,fill, size){
     ctx.beginPath();

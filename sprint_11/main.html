@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawing Assessment</title>
+    <style>
+        canvas{
+            display: block;
+            margin: auto;
+            margin-top: 125px;
+        }
+    </style>
+</head>
+
 <body>
 
 <canvas id='myCanvas'></canvas>
@@ -47,7 +61,7 @@
     h1 = 23
     h=25
     // colour swatch
-    let white = new Swatch(x, y, w, h1, colArray[0], colArray[0],  colArray[0],colArray[2]);
+    let white = new Swatch(x+0*w1, y, w, h1, colArray[0], colArray[0],  colArray[0],colArray[2]);
     let grey = new Swatch(x+1*w1, y, w, h1, colArray[1], colArray[1],  colArray[0],colArray[2]);
     let black = new Swatch(x+2*w1, y, w, h1, colArray[2], colArray[2],  colArray[0],colArray[2], );
     let red = new Swatch(x+3*w1, y, w, h1, colArray[3], colArray[3], colArray[0],colArray[2]);
@@ -57,7 +71,7 @@
     let blue = new Swatch(x+7*w1, y, w, h1, colArray[7], colArray[7],  colArray[0],colArray[2]);
     let purple = new Swatch(x+8*w1, y, w, h1, colArray[8], colArray[8],  colArray[0],colArray[2]);
 
-    let white1 = new Swatch(x, y+1*h, w, h1, colArray[9], colArray[9],  colArray[0],colArray[2]);
+    let white1 = new Swatch(x + 0*w1, y+1*h, w, h1, colArray[9], colArray[9],  colArray[0],colArray[2]);
     let grey1 = new Swatch(x+1*w1, y+1*h, w, h1, colArray[10], colArray[10],  colArray[0],colArray[2]);
     let black1 = new Swatch(x+2*w1, y+1*h, w, h1, colArray[11], colArray[11],  colArray[0],colArray[2], );
     let red1 = new Swatch(x+3*w1, y+1*h, w, h1, colArray[12], colArray[12], colArray[0],colArray[2]);
@@ -67,7 +81,7 @@
     let blue1 = new Swatch(x+7*w1, y+1*h, w, h1, colArray[16], colArray[16],  colArray[0],colArray[2]);
     let purple1 = new Swatch(x+8*w1, y+1*h, w, h1, colArray[17], colArray[17],  colArray[0],colArray[2]);
 
-    let white2 = new Swatch(x, y+2*h, w, h1, colArray[18], colArray[18],  colArray[0],colArray[2]);
+    let white2 = new Swatch(x +0*w1, y+2*h, w, h1, colArray[18], colArray[18],  colArray[0],colArray[2]);
     let grey2 = new Swatch(x+1*w1, y+2*h, w, h1, colArray[19], colArray[19],  colArray[0],colArray[2]);
     let black2 = new Swatch(x+2*w1, y+2*h, w, h1, colArray[20], colArray[20],  colArray[0],colArray[2], );
     let red2 = new Swatch(x+3*w1, y+2*h, w, h1, colArray[21], colArray[21], colArray[0],colArray[2]);
