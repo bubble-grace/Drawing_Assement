@@ -173,7 +173,7 @@
 				</p>
 				<img class="img-responsive" src="assets/img/sprint3_kanban.PNG" alt="">
 				<img class="img-responsive" src="assets/img/sprint3_visual.jpg" alt="">
-</P>
+
 				<p>
 
 				</p>
@@ -236,7 +236,7 @@
 <p>Once I had decided on which star to make I went about to try and implement it into my code by use of more buttons and similar functions to before</p>
 				<h3>Testing </h3>
 				<video class="center" controls>
-					<source src="assets/vids/sprint5_test.mp4.mp4" type="video/mp4">
+					<source src="assets/vids/sprint5_test.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
 				<h3>Reflection </h3>
@@ -380,7 +380,12 @@
 
 					<p>
 						Once I had finished doctyping and removing the errors I could I ended up with minimal errors that are required for the program to run successfully. I edited the formatting which made it more appealing and usable by putting related content in the sam area using some usability heuristics. </p>
-					<img class="img-responsive" src="assets/img/errors_1.PNG" alt="">
+					<div class = "col">
+						<img class="img-responsive" src="assets/img/errors_1.PNG" alt="">
+					</div>
+					<div class = "col">
+						<img class="img-responsive" src="assets/img/errors_2.PNG" alt="">
+					</div>
 				</div>
 					<div id="R">
 
@@ -392,83 +397,69 @@
 				<p> I believe that my drawing program is user-friendly because there is a hover function over the buttons and the user therefore knows where they are and what their options are. The naming is also mainly self explanatory with the width being defined as S, M, L to indicate small, medium and large. This is the same with the number of points on the star, the numbers start from 5 to indicate to the user that these buttons do not control the rectangle, ellipse or heart. So by process of deduction it must  control the star. Also to help the user if a line width or a star point number is not selected but the object is selected, these values have a default. </p>
 
 
-				<hr>
+						<h3>Sustainability and Future Proofing</h3>
+
+						<p>Future proofing and sustainability is the task of ensuring the code can be used by future generations, through easy update options, adding new features, and another developer can work on with ease. This is mostly deployed in the main.js with the buttons, this allows a person to update where the buttons are positioned based on the x, y, w, h programmed at the start which makes it  </p>
+
+						<p>Code commenting and doctyping to make it easy to follow and understand with basic code knowledge. The code starts from a main function and this allows another developer to work on with minimal distress. I tried to explain my thought process through this code. </p>
+						<p> Sustainability and future proofing influenced many of my decisions regarding which options to use. One main trial I had was between a circle and ellipse and different sized stars. When considering these I looked at how the function could be used multiple times and which one would be easiest to adapt for later sprints. The main example of this was starts I chose to use the maths function instead of triangles which meant for later I could adapt it for multiple points.  </p>
+
+						Another sustainability feature of this code is the functions, these shape functions are used multiple times, with the rectangle being used the most as it is a basic outline for all the other shapes. In the first sprints I only had nine colours, this was because it was easier to manage in the early stages. However for the final version I changed this to a list of 27 colours for the user to choose from. This showed the ability for the code to be changed  if needed, this is a great example of sustainability, and future proofing methods.
+<p>
+
+</p>
+						<h3>Functionality</h3>
+
+						<p> Functionality is that the program works properly this includes not crashing despite the users not selecting a colour or a button. It also needs to meet the users requirements of being able to change shapes and colour to draw an image but also able to clear and undo if the user makes mistakes  </p>
+
+						<p>In order to test the functionality of my code, I got others to test my code as seen in the video below to the left. Despite the users changing their mind and making decisions that might not always be what was expected. I also tested the code in Microsoft Edge as seen below to the right and it worked as expected. This was because I systematically tested after each sprint and troubleshoot errors as soon as they appeared .</p>
+						<div class = "col">
+							<video class="center" controls>
+								<source src="assets/vids/check.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+						<div class = "col">
+							<video class="center" controls>
+								<source src="assets/vids/microsoftedge.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+
+						<h3>What have I learnt from this planning process?</h3>
+
+						<p>I have learnt about structuring the planning into manageable chunks, this made hard ideas much simpler and easier to follow. Each Sprint took about a week and focused on one main ideas. This started from the most basic code that could be needed which was to draw and drop a rectangle into place, to the stars with many pionts<p/>
+
+						<p>These Sprints were achievable and allowed me to feel a sense of accomplishment on completing each one. It also gave me direction to what I needed to achieve next and the order of progression</p>
+
+						<h3>GitHub</h3>
+
+						<p>I used github as a control center for all my code and sprints. The kanban boards helped me to structure and keep track of my ideas and what was required for each sprint. With the doing, to do and done columns I made sure that I was on track and focused. This was also where I stored the project backlog, an ever updating file with what was happening and what had the highest priority and what was next in the big scheme. </p>
+
+						<p>I would also push all my code to github, this allowed me to keep track of the sprints and always have the code backed up to find it again. This also records the date and time of each sprint, with relevant comments from myself. As seen below</p>
+
+						<h3>Decision Making</h3>
+
+						<p>In sprint 2, I made the decision to chose between an ellipse an circle function, thai was done through many tests which highlighted the need for an Ellipse over a circle. In sprint 5 there were some tests for stars using maths. In sprint 7 I chose been a clip and a clear function for removing shapes from the canvas. </p>
+
+						<h3>Project Backlog</h3>
+
+						<p>Project backlog was my hub for all the ideas and things that needed to be done. These were big projects that would become sprints. The project backlog was also where ideas were placed in priority order. This was a document that changes regularly to adapt to the newest high priority item. </p>
+
+
+
+
+
+
+
+
 					</div>
- <hr>
-<!-- Paragraphs -->
-<h3>Example code insert (don't do too much of this)</h3>
-<pre style="font-size: 1.5em;">
-<code class="javscript"> function inBoundsCheck(xM, yM, x, y, w, h){
-        if( xM > x && xM < x+w && yM > y && yM < y+h){
-            return true;
-        }else{
-            return false;
-        }
-    }</code>
-</pre>
-
-
-					<!-- Lists -->
-					<h3>Unordered list</h3>
-					<p>Unordered lists are used to markup lists where list items do not require numbering.</p>
-					<ul>
-						<li>Ut wisi enim ad minim veniam</li>
-						<li>Quis nostrud exerci tation</li>
-						<li>Lamcorper suscipit lobortis nis</li>
-						<li>Ut aliquip ex ea commodo consequat</li>
-						<li>Duis autem vel eum iriure dolor</li>
-					</ul>
-					<hr>
-
-					<h3>Ordered list</h3>
-					<p>Ordered lists are used to markup lists where list items require numbering.</p>
-					<ol>
-						<li>Hendrerit in vulputate velit esse</li>
-						<li>Olestie consequat</li>
-						<li>Vel illum dolore eu feugiat</li>
-						<li>Nulla facilisis at vero eros</li>
-						<li>Accumsan et iusto odio</li>
-					</ol>
-					<hr>
-
-					<h3>Unstyled list</h3>
-					<p>You can make the list unstyled using the <code>list-unstyled</code> class.</p>
-					<ul class="list-unstyled">
-						<li>Ut wisi enim ad minim veniam</li>
-						<li>Quis nostrud exerci tation</li>
-						<li>Lamcorper suscipit lobortis nis</li>
-						<li>Ut aliquip ex ea commodo consequat</li>
-						<li>Duis autem vel eum iriure dolor</li>
-					</ul>
-					<hr>
-
-					<h3>Inline list</h3>
-					<p>You can make the list display inline using the <code>list-inline</code> class.</p>
-					<ul class="list-inline">
-						<li>One</li>
-						<li>Two</li>
-						<li>Three</li>
-						<li>Four</li>
-					</ul>
-					<hr>
-
-				
-
-					<h3>Buttons</h3>
-					<p>You can apply the <code>btn</code> class to any element that requires a button style.</p>
-					<p><a href="#" class="btn">Submit</a></p>
-					<hr>
-
-
-
-               
-            
-
-			
+					</div>
 			</div>
+						<hr>
 			<div class="footer">
-				&copy; Copyright 2015
+				&copy; Copyright 2022
 			</div>
-		</div>
+
 	</body>
 </html>

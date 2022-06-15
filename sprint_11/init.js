@@ -6,7 +6,7 @@ let ctx = canvas.getContext('2d');
 
 let width = 800;
 
-let height = 400;
+let height = 375;
 
 let colour = "rgb(169,169,169)"
 
@@ -14,29 +14,13 @@ let colour = "rgb(169,169,169)"
 let rect_start_x = 350;
 let rect_start_y = 50;
 let rect_width = 400;
-let rect_height = 300;
+let rect_height = 275;
 
 // the canvas area (grid area)
 canvas.width = width;
 canvas.height = height;
 canvas.colour = colour
 
-let myScale = 0;
-
-/**
- * Function set up canvas
- */
-
-// set up the canvas to be used
-function setupCanvas (canvas){
-    // Get the pixel ratio back to 1
-    let dpr = window.devicePixelRatio || 1;
-    myScale = dpr;
-    // get the size of the CSS in HTML
-    let rect = canvas.getBoundingClientRect();
-    console.log(rect.width);
-    console.log(rect.height);
-}
 
 // This is an array for the colours used
 
@@ -61,16 +45,11 @@ let colArray=[
 
 /**
  * Class Grid
- * @param {number} x x
- * @param {number} y y
  * @param {number} w width
  * @param {number} h height
- * @param {string} fill fill colour
- * @param {string} over hover over colour
- * @param {string} selected button has been clicked colour
- * @param {string} stroke stroke colour
- * @param {string} text button text
- * @param {string} textColour
+ * @param {string} intervalWidth the distance between lines
+ * @param {string} strokeColour lines colour
+ * @param {string} strokeWidth width of the line
 */
 class Grid {
     constructor(w, h, intervalWidth, strokeColour,
@@ -138,7 +117,7 @@ function basicRect(x,y,w,h,fill){
 }
 /**
  * Function Draw a Rectangle with a fill function and an outline
- * this is used for thr background of the drawing area
+ * this is used for the background of the drawing area
  * @param {number} x x
  * @param {number} y y
  * @param {number} w width
@@ -178,6 +157,15 @@ function drawCircle(x,y,r, fill){
 }
 
 //----------------------------------------------------------
+/**
+ * Class Line
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} x1 end x point (x + or - width)
+ * @param {number} y1 end x point (y + or - height)
+ * @param {string} fill fill colour
+ * @param {number} width thickness of the line
+ */
 class Line{
     constructor(x,y,w,h,colour, width=2) {
         this.w = w;
@@ -219,6 +207,15 @@ function drawLine(x,y,x1,y1, fill, width){
 }
 
 //-------------------------------------------------------
+/**
+ * Class Rectangle
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ */
+
 class Rectangle{
     constructor(x,y,w,h,colour) {
         this.w = w;
@@ -234,7 +231,14 @@ class Rectangle{
 }
 }
 //------------------------------------------------
-
+/**
+ * Class Ellipse
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ */
 class Ellipse{
     constructor(x,y,w, h,colour){
         this.w = w;
@@ -285,7 +289,15 @@ function basicEllipse(x,y,w,h,fill, size){
 }
 
 //----------------------------------------------------------------------
-
+/**
+ * Class Star
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ * @param {number} point number of points in the star
+ */
 class Star{
     // if a point is not selected default to 5
     constructor(x,y,w, h,colour, point = 5) {
@@ -328,7 +340,7 @@ function fillStar(x,y,w,h,fill, point = 5){
 }
 
 /**
- * Function Draw a outline (basic) Star
+ * Function Draw an outline (basic) Star
  * @param {number} x x
  * @param {number} y y
  * @param {number} w width
@@ -357,8 +369,14 @@ function basicStar(x,y,w,h,fill, point = 5){
 
 //-----------------------------------------------------------------
 
-
-
+/**
+ * Class Heart
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ */
 
 class Heart{
     constructor(x,y,w, h,colour) {
@@ -438,6 +456,15 @@ function basicHeart(x,y,w,h,fill){
     ctx.stroke()
 }
 
+/**
+ * Class Smiley Face
+ * @param {number} x x
+ * @param {number} y y
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fill colour
+ * @param {number} size thickness of line
+ */
 class Smiley_Face{
     // the size is set if the width of the line is not already selected
     constructor(x,y,w, h,colour, size =2){
@@ -470,10 +497,10 @@ function draw_Smiley_Face(x,y,w,h,fill, size){
     // This is the distance between the top and the eyes
     let topCurveHeight = h * 0.3;
     // Circle and Oval for the outside
-    basicEllipse(x+w/2,y+h/2,Math.abs(w/2),Math.abs(h/2),fill, size);
+    basicEllipse(x+w/2,y+h/2,Math.abs(w/2),Math.abs(h/2), fill, size);
     // eyes
-    drawLine(x+w/3, y +topCurveHeight,x+w/3, y + h/2, size)
-    drawLine(x+2*w/3, y + topCurveHeight,x+2*w/3, y + h/2, size)
+    drawLine(x+w/3, y +topCurveHeight,x+w/3, y + h/2, fill, size)
+    drawLine(x+2*w/3, y + topCurveHeight,x+2*w/3, y + h/2, fill, size)
     ctx.moveTo(x+w/5, y +2*topCurveHeight);
     // mouth
     ctx.bezierCurveTo(x+w/5, y +2*topCurveHeight, x+w/3, y +4*topCurveHeight, x+2*w/2.5, y +2*topCurveHeight);

@@ -32,7 +32,7 @@ class InteractiveObject{
         this.xMouse = e.offsetX;
         this.yMouse = e.offsetY;
     }
-    mLeave(e){
+    mLeave(){
         // to know were the mouse is
         console.log("Mouse has left the canvas")
     }
