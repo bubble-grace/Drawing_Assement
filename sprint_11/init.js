@@ -8,7 +8,6 @@ let width = 800;
 
 let height = 375;
 
-let colour = "rgb(169,169,169)"
 
 // dimensions of my drawing area
 let rect_start_x = 350;
@@ -19,7 +18,6 @@ let rect_height = 275;
 // the canvas area (grid area)
 canvas.width = width;
 canvas.height = height;
-canvas.colour = colour
 
 
 // This is an array for the colours used
@@ -40,49 +38,6 @@ let colArray=[
 
 
 
-
-// ----------------------------------------
-
-/**
- * Class Grid
- * @param {number} w width
- * @param {number} h height
- * @param {string} intervalWidth the distance between lines
- * @param {string} strokeColour lines colour
- * @param {string} strokeWidth width of the line
-*/
-class Grid {
-    constructor(w, h, intervalWidth, strokeColour,
-                strokeWidth) {
-        this.w = w;
-        this.h = h;
-        this.intervalWidth = intervalWidth;
-        this.strokeColour = strokeColour;
-        this.strokeWidth = strokeWidth;
-    }
-
-    update() {
-        this.draw()
-    }
-
-    draw() {
-        // draw horizontal lines
-        for (let i = -this.w; i <= this.w; i +=
-            this.intervalWidth) {
-            drawLine(i, -this.h, i,
-                this.h, this.strokeColour,
-                this.strokeWidth);
-        }
-        // draw vertical lines
-        for (let j = -this.h; j <= this.h; j +=
-            this.intervalWidth) {
-            drawLine(-this.w, j, this.w,
-                j, this.strokeColour,
-                this.strokeWidth);
-        }
-    }
-
-}
 //--------------------------------------------------------
 /**
  * Function Draw a Rectangle

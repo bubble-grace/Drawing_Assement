@@ -328,7 +328,7 @@ class Manager extends InteractiveObject {
     update(){
         ctx.save();
         // drawing space
-        backRect(rect_start_x,rect_start_y, rect_width, rect_height,"rgb(230,230,230)");
+        backRect(rect_start_x,rect_start_y, rect_width, rect_height,"rgb(245,245,245)");
         ctx.clip();
         // finding width and height
         this.w = this.xMouse - this.xStart;

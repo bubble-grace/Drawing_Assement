@@ -7,6 +7,8 @@
         canvas{
             display: block;
             margin: 125px auto auto;
+            background: rgb(206, 222, 248);
+            padding: 2px;
         }
     </style>
 </head>
@@ -20,8 +22,6 @@
 
 
 <script>
-    // make the background grid
-    let G = new Grid(width, height, 25, "rgb(169,169,169)", 0.3);
 
     let x = 50
     let y = 50
@@ -104,7 +104,6 @@
     function animate(){
         // all the updates
         ctx.clearRect(0,0, width, height);
-        G.update();
         M.update();
         for (let i=0; i<starSet.length; i++){
             starSet[i].update();
