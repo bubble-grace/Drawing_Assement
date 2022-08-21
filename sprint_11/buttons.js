@@ -289,7 +289,7 @@ class Manager extends InteractiveObject {
         super.mUp(e);
         let name = InteractiveButton.selected.text;
         console.log(name);
-        if (this.readytodraw) {
+        if (this.readytodraw && this.h!==0) {
             if (name === "Ellipse") {
                 // Ellipse
                 let temp = new Ellipse(this.xStart + this.w / 2, this.yStart + this.h / 2, Math.abs(this.w / 2), Math.abs(this.h / 2), Swatch.colour);
